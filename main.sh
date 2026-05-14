@@ -1,8 +1,14 @@
 #!/bin/bash
 
-if [ ! -e "jobs.txt" ]; then
-    printf "The jobs file is empty\n"
+if [ ! -e "jobs.txt" ]; 
+then
+    echo "Input file doesnt exist"
     exit 1
+fi
+
+if [ ! -s "jobs.txt" ]; then
+    echo "Notice: Input file is empty. Nothing to process."
+    exit 0
 fi
 
 
@@ -22,7 +28,7 @@ while read -r line; do
         continue
     fi
 
-done < jobs.txt
+done < "jobs.txt"
 
 printf "there are %d comments\n" "$comment_counter"
 

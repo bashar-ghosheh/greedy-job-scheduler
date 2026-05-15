@@ -117,8 +117,6 @@ done < "$jobs.txt"
 # Abort early if nothing survived validation
 if [ ! -s "$T_VALID" ]; then
     echo "No valid jobs found in '$jobs.txt'. Exiting."
-    rm -f "$T_VALID" "$T_SEEN" "$T_KEYFILE" "$T_SORTED" \
-          "$T_SLOTS" "$T_SLOTTMP" "$T_SCHED" "$T_SKIP"
     exit 0
 fi
 
